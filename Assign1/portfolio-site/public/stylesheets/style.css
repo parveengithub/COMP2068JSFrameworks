@@ -92,7 +92,7 @@ button {
 }
 
 button:hover {
-    background: #00ddff; /* Darker blue on hover */
+    background: #5900ff; /* Darker blue on hover */
 }
 
 /* List styles for projects */
@@ -121,7 +121,7 @@ footer {
     background: #00ddff; /* Blue background for footer */
     color: #fff; /* White text */
     position: relative; /* Position relative for footer */
-    bottom: 60; /* Stick to the bottom */
+    bottom: 150; /* Stick to the bottom */
     width: 100%; /* Full width */
 }
 
@@ -135,4 +135,11 @@ footer {
     main {
         padding: 15px; /* Adjust padding for smaller screens */
     }
+}
+.logo {
+  max-width: 120px; /* Set maximum width for the logo */
+  height: auto; /* Maintain aspect ratio */
+  display: inline-block; /* Ensure the logo is inline with navigation */
+  vertical-align: middle; /* Align with the middle of the navigation */
+  margin-right: 20px; /* Space between logo and navigation */
 }
