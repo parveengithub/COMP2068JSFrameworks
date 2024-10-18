@@ -16,5 +16,22 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Use the routes
 app.use('/', indexRouter);
 
+app.get('/home', (req, res) => {
+  res.render('Home', { title: 'welcome to My Portfolio' });
+});
+
+app.get('/about', (req, res) => {
+  res.render('about', { title: 'About Me' });
+});
+
+app.get('/contact', (req, res) => {
+  res.render('contact', { title: 'Contact Me' });
+});
+
+app.get('/projects', (req, res) => {
+  res.render('projects', { title: 'My Projects' });
+});
+
+
 
 module.exports = app;
