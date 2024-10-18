@@ -137,9 +137,19 @@ footer {
     }
 }
 .logo {
-  max-width: 120px; /* Set maximum width for the logo */
-  height: auto; /* Maintain aspect ratio */
-  display: inline-block; /* Ensure the logo is inline with navigation */
-  vertical-align: middle; /* Align with the middle of the navigation */
-  margin-right: 20px; /* Space between logo and navigation */
+  max-width: 120px; 
+  height: auto; 
+  display: inline-block; 
+  vertical-align: middle; 
+  margin-right: 20px; 
+
+}
+html, body {
+  height: 100%; 
+}
+
+body {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: space-between; /* Ensure space is used properly */
 }
