@@ -68,7 +68,8 @@ form {
   flex-direction: column;
   margin: 40px auto; 
   width: 60%; 
-  max-width: 60px; 
+  max-width: 600px; 
+  border-radius: 8px;
   padding: 20px; /
 }
 
