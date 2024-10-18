@@ -1,8 +1,10 @@
 const express = require('express');
 const app = express();
-const routes = require('./routes/index'); // Import the router
+const routes = require('./routes/index'); 
+const users = require('./routes/users');
 
-app.set('view engine', 'hbs'); // Set Handlebars as the view engine
+app.set('view engine'); // Set Handlebars as the view engine
+app.set('hbs');
 app.use(express.static('public')); // Serve static files
 
 app.use('/', routes); // Use the router for all routes
