@@ -11,14 +11,14 @@ router.get('/about', (req, res) => {
   res.render('about', { title: 'About Me' });
 });
 
-// Route for Projects Page
-router.get('/projects', (req, res) => {
-  res.render('projects', { title: 'Projects' });
-});
-
 // Route for Contact Me Page
 router.get('/contact', (req, res) => {
   res.render('contact', { title: 'Contact Me' });
+});
+
+// Route for Projects Page
+router.get('/projects', (req, res) => {
+  res.render('projects', { title: 'Projects' });
 });
 
 module.exports = router;
