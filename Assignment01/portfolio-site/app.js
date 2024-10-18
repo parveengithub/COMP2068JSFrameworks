@@ -39,7 +39,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-const indexRouter = require('./routes/index');
-app.use('/', indexRouter);
+
 
 module.exports = app;
