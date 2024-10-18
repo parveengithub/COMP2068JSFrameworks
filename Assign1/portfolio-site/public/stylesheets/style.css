@@ -1,8 +1,24 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* public/stylesheets/style.css */
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+h2 {
+  color: #007bff; /* Primary color for headings */
+}
+
+.projects, .contact {
+  margin-top: 20px;
 }
 
 a {
   color: #00B7FF;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline; /* Underline on hover */
 }
