@@ -1,29 +1,8 @@
-
-/* Basic styles for the buttons */
-.nav-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin: 20px 0;
-}
-.nav-buttons a {
-    padding: 10px 20px;
-    background-color: #4CAF50; /* Green */
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-}
-.nav-buttons a:hover {
-    background-color: #45a049;
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-
-
-<div class="nav-buttons">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="projects.html">Projects</a>
-<a href="contact.html">Contact</a>
-</div>
-
-
+a {
+  color: #00B7FF;
+}
