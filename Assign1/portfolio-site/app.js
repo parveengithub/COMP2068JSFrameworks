@@ -1,40 +1,20 @@
-const express = require('express');
-const path = require('path');
-const bodyParser = require('body-parser');
+var express = require('express');
+var path = require('path');
+var hbs = require('hbs');
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
 
-// Importing routes
-const indexRouter = require('./routes/index');
-const aboutRouter = require('./routes/about');
-const projectsRouter = require('./routes/projects');
-const contactRouter = require('./routes/contact');
+var app = express();
 
-const app = express();
-
-// Set up Handlebars as the view engine
+// Set view engine to Handlebars
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-// Serve static files like CSS and images
+// Middleware for static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Middleware to parse request bodies (useful for forms, etc.)
-app.use(bodyParser.urlencoded({ extended: true }));
+// Use the routes
+app.use('/', indexRouter);
 
-// Use modular routes
-app.use('/', indexRouter);        // Home
-app.use('/about', aboutRouter);   // About Me
-app.use('/projects', projectsRouter); // Projects
-app.use('/contact', contactRouter);   // Contact Me
-
-// Error handling for non-existent routes
-app.use((req, res) => {
-    res.status(404).render('404', { title: 'Page Not Found' });
-});
-
-// Start the server
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-});
 
 module.exports = app;
