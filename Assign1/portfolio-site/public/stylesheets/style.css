@@ -1,139 +1,139 @@
 /* Reset some default browser styles */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* Body styles */
 body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4; /* Light gray background */
-  color: #333; /* Dark text color */
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4; /* Light gray background */
+    color: #333; /* Dark text color */
 }
 
 /* Header styles */
 header {
-  background: #007bff; /* Blue background for header */
-  color: #fff; /* White text */
-  padding: 15px 0; /* Padding for spacing */
+    background: #007bff; /* Blue background for header */
+    color: #fff; /* White text */
+    padding: 15px 0; /* Padding for spacing */
 }
 
 nav ul {
-  list-style: none; /* Remove bullet points */
-  text-align: center; /* Center the navigation */
+    list-style: none; /* Remove bullet points */
+    text-align: center; /* Center the navigation */
 }
 
 nav ul li {
-  display: inline; /* Inline list items */
-  margin: 0 15px; /* Space between items */
+    display: inline; /* Inline list items */
+    margin: 0 15px; /* Space between items */
 }
 
 nav ul li a {
-  color: #fff; /* White link color */
-  text-decoration: none; /* Remove underline */
-  font-weight: bold; /* Bold links */
-  transition: color 0.3s; /* Transition for hover effect */
+    color: #fff; /* White link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold links */
+    transition: color 0.3s; /* Transition for hover effect */
 }
 
 nav ul li a:hover {
-  color: #ffc107; /* Change color on hover */
+    color: #ffc107; /* Change color on hover */
 }
 
 /* Main content styles */
 main {
-  max-width: 800px; /* Max width for main content */
-  margin: 20px auto; /* Center the main content */
-  padding: 20px; /* Padding for main content */
-  background: #fff; /* White background for main content */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 800px; /* Max width for main content */
+    margin: 20px auto; /* Center the main content */
+    padding: 20px; /* Padding for main content */
+    background: #fff; /* White background for main content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 h2 {
-  color: #333; /* Dark color for headings */
-  text-align: center; /* Center align headings */
-  margin-bottom: 15px; /* Space below heading */
+    color: #333; /* Dark color for headings */
+    text-align: center; /* Center align headings */
+    margin-bottom: 15px; /* Space below heading */
 }
 
 /* Paragraph styles */
 p {
-  margin-bottom: 15px; /* Space below paragraphs */
+    margin-bottom: 15px; /* Space below paragraphs */
 }
 
 /* Form styles */
 form {
-  display: flex;
-  flex-direction: column; /* Stack form elements vertically */
-  margin-top: 15px; /* Space above form */
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    margin-top: 15px; /* Space above form */
 }
 
 label {
-  margin-bottom: 5px; /* Space below labels */
+    margin-bottom: 5px; /* Space below labels */
 }
 
 input[type="text"],
 input[type="email"],
 textarea {
-  padding: 10px; /* Padding for inputs */
-  margin-bottom: 15px; /* Space below inputs */
-  border: 1px solid #ccc; /* Light border */
-  border-radius: 4px; /* Rounded corners for inputs */
+    padding: 10px; /* Padding for inputs */
+    margin-bottom: 15px; /* Space below inputs */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners for inputs */
 }
 
 button {
-  padding: 10px; /* Padding for button */
-  background: #007bff; /* Blue background for button */
-  color: #fff; /* White text */
-  border: none; /* Remove border */
-  border-radius: 4px; /* Rounded corners for button */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background 0.3s; /* Transition for hover effect */
+    padding: 10px; /* Padding for button */
+    background: #007bff; /* Blue background for button */
+    color: #fff; /* White text */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background 0.3s; /* Transition for hover effect */
 }
 
 button:hover {
-  background: #0056b3; /* Darker blue on hover */
+    background: #0056b3; /* Darker blue on hover */
 }
 
 /* List styles for projects */
 ul {
-  list-style-type: none; /* Remove bullet points */
-  padding: 0; /* Remove padding */
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
 }
 
 ul li {
-  margin: 10px 0; /* Space between project items */
+    margin: 10px 0; /* Space between project items */
 }
 
 ul li a {
-  color: #007bff; /* Link color for project links */
-  text-decoration: none; /* Remove underline */
+    color: #007bff; /* Link color for project links */
+    text-decoration: none; /* Remove underline */
 }
 
 ul li a:hover {
-  text-decoration: underline; /* Underline on hover */
+    text-decoration: underline; /* Underline on hover */
 }
 
 /* Footer styles */
 footer {
-  text-align: center; /* Center align footer text */
-  padding: 15px 0; /* Padding for footer */
-  background: #007bff; /* Blue background for footer */
-  color: #fff; /* White text */
-  position: relative; /* Position relative for footer */
-  bottom: 0; /* Stick to the bottom */
-  width: 100%; /* Full width */
+    text-align: center; /* Center align footer text */
+    padding: 15px 0; /* Padding for footer */
+    background: #007bff; /* Blue background for footer */
+    color: #fff; /* White text */
+    position: relative; /* Position relative for footer */
+    bottom: 0; /* Stick to the bottom */
+    width: 100%; /* Full width */
 }
 
 /* Responsive styles */
 @media (max-width: 600px) {
-  nav ul li {
-      display: block; /* Stack links vertically on small screens */
-      margin: 10px 0; /* Space between stacked items */
-  }
+    nav ul li {
+        display: block; /* Stack links vertically on small screens */
+        margin: 10px 0; /* Space between stacked items */
+    }
 
-  main {
-      padding: 15px; /* Adjust padding for smaller screens */
-  }
+    main {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
 }
