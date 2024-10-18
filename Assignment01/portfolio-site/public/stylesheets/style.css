@@ -1,8 +1,68 @@
+/* public/stylesheets/style.css */
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #f8f9fa; /* Light background color for better contrast */
+  color: #333; /* Dark text color for readability */
 }
 
-a {
-  color: #00B7FF;
+header {
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0;
+}
+
+nav ul li {
+  display: inline; /* Display list items inline */
+  margin: 0 15px; /* Spacing between links */
+}
+
+nav a {
+  color: white; /* White text for navigation links */
+  text-decoration: none; /* Remove underline */
+}
+
+nav a:hover {
+  text-decoration: underline; /* Underline on hover for better UX */
+}
+
+h2 {
+  color: #007bff; /* Primary color for headings */
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #007bff; /* Same background color as header */
+  color: white;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer a {
+  color: #00B7FF; /* Link color in footer */
+}
+
+footer a:hover {
+  text-decoration: underline; /* Underline on hover for footer links */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+      padding: 20px; /* Reduced padding on smaller screens */
+  }
+
+  nav ul li {
+      display: block; /* Stack navigation links vertically */
+      margin: 10px 0; /* Spacing between links */
+  }
 }
