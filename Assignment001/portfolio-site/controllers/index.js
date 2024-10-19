@@ -1,20 +1,21 @@
-const express = require('express');
-const router = express.Router();
+var express = require('express');
+var router = express.Router();
 
-router.get('/', (req, res) => {
-  res.render('home');
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('home', { title: 'Welcome to My Portfolio' });
 });
 
-router.get('/about', (req, res) => {
-  res.render('about');
+router.get('/', function(req, res, next) {
+  res.render('about', { title: 'About me' });
 });
 
-router.get('/projects', (req, res) => {
-  res.render('projects');
+router.get('/', function(req, res, next) {
+  res.render('Contact', { title: 'Contact Me' });
 });
 
-router.get('/contact', (req, res) => {
-  res.render('contact');
+router.get('/', function(req, res, next) {
+  res.render('Projects', { title: 'My Projects' });
 });
 
 module.exports = router;
