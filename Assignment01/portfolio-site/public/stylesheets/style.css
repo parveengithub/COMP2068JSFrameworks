@@ -100,7 +100,7 @@ button {
 }
 
 button:hover {
-  background: #5900ff; 
+ 
   background-color: #5900ff; 
   transform: scale(1.05); 
 }
@@ -134,6 +134,7 @@ footer {
   position: relative;
   bottom: 150; 
   width: 100%; 
+  
 }
 
 
@@ -174,8 +175,4 @@ justify-content: space-between;
   cursor: pointer; 
   transition: background-color 0.3s ease;
 }
-.my-button:hover {
-  background-color: #5900ff; 
-  transform: scale(1.05); 
-  
-}
+
