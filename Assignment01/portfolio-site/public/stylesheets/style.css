@@ -8,7 +8,7 @@
 body {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
-  background-color: #74155c; 
+  background-color: #157450; 
   color: #333; 
 }
 
@@ -132,6 +132,7 @@ footer {
   width: 100%; 
 }
 
+
 /* Responsive styles */
 @media (max-width: 600px) {
   nav ul li {
@@ -168,4 +169,8 @@ justify-content: space-between;
   border-radius: 4px; 
   cursor: pointer; 
   transition: background-color 0.3s ease;
+}
+.my-button:hover {
+  background-color: #5900ff; /* Change background color on hover */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
 }
