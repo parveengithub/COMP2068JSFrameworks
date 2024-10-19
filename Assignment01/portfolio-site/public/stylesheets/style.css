@@ -173,3 +173,9 @@ justify-content: space-between;
   background-color: #5900ff; 
   transform: scale(1.05); 
 }
+body {
+  background-image: url('/portfolio-site/public/images/background.jpg'); /* Path to your image */
+  background-size: cover; /* Make the image cover the entire viewport */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center; /* Center the image */
+}
