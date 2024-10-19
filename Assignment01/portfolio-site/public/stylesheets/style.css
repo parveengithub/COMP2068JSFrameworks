@@ -8,7 +8,7 @@
 body {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
-  background-color: #157450; 
+  background-color: lavenderblush; 
   color: #333; 
 }
 
@@ -37,7 +37,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #ffc107; 
+  color: #ffc107;
+   
 }
 
 /* Main content styles */
@@ -50,6 +51,7 @@ main {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
   text-align: center;
   background-color: darkkhaki;
+  
 }
 
 h2 {
@@ -99,6 +101,8 @@ button {
 
 button:hover {
   background: #5900ff; 
+  background-color: #5900ff; 
+  transform: scale(1.05); 
 }
 
 /* List styles for projects */
@@ -171,6 +175,7 @@ justify-content: space-between;
   transition: background-color 0.3s ease;
 }
 .my-button:hover {
-  background-color: #5900ff; /* Change background color on hover */
-  transform: scale(1.05); /* Slightly enlarge the button on hover */
+  background-color: #5900ff; 
+  transform: scale(1.05); 
+  
 }
