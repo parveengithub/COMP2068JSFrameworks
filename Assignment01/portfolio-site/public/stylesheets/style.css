@@ -49,6 +49,7 @@ main {
   border-radius: 8px; 
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
   text-align: center;
+  background-color: darkkhaki;
 }
 
 h2 {
@@ -158,4 +159,17 @@ body {
 display: flex;
 flex-direction: column; 
 justify-content: space-between; 
+}
+.my-button {
+  padding: 10px 20px; /* Add some padding */
+  background-color: #00ddff; /* Initial background color */
+  color: #ffffff; /* Text color */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease;
+}
+.my-button:hover {
+  background-color: #5900ff; 
+  transform: scale(1.05); 
 }
