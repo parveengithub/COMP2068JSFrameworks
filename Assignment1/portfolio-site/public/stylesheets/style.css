@@ -123,7 +123,7 @@ ul li a:hover {
 footer {
     text-align: center; 
     padding: 15px 0;
-    background: #00ddff; 
+    background: #00eaff; 
     color: #fff; 
     position: relative;
     bottom: 150; 
@@ -146,7 +146,7 @@ footer {
   height: auto; 
   display: inline-block; 
   vertical-align: middle; 
-  margin-right: 20px; 
+  margin-right: 200px; 
 
 }
 html, body {
