@@ -8,7 +8,7 @@
 body {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
-  background-color: #f4f4f4; 
+  background-color: #74155c; 
   color: #333; 
 }
 
@@ -168,14 +168,4 @@ justify-content: space-between;
   border-radius: 4px; 
   cursor: pointer; 
   transition: background-color 0.3s ease;
-}
-.my-button:hover {
-  background-color: #5900ff; 
-  transform: scale(1.05); 
-}
-body {
-  background-image: url('/portfolio-site/public/images/background.jpg'); /* Path to your image */
-  background-size: cover; /* Make the image cover the entire viewport */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-position: center; /* Center the image */
 }
