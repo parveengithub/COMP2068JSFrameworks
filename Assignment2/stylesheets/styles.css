@@ -1,0 +1,34 @@
+/* Custom Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+  
+  header, footer {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 1em;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  .event-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: white;
+  }
+  
+  .event-title {
+    font-size: 1.5em;
+    color: #007BFF;
+  }
+  
+  .event-location {
+    font-size: 1.2em;
+    color: #555;
+  }
+  

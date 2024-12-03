@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const session = require('express-session');
 const { mongoURI, sessionSecret } = require('./config/keys');
+require('dotenv').config();
+
 
 // Create the app
 const app = express();
