@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var app = express();
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -32,6 +33,19 @@ app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  app.get('/', (req, res) => {
+    res.render('index'); // Renders index.hbs
+  });
+  
+  app.get('/login', (req, res) => {
+    res.render('login'); // Renders login.hbs
+  });
+  
+  app.get('/register', (req, res) => {
+    res.render('register'); // Renders register.hbs
+  });
+  
 
   // render the error page
   res.status(err.status || 500);
