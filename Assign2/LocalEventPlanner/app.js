@@ -25,12 +25,6 @@ app.get('/events', (req, res) => {
     res.render('events', { title: 'Events', events: [] });
 });
 
-
-
-  const events = [
-      { title: 'Music Concert', date: '2024-12-10', location: 'City Center', description: 'A thrilling music concert with local bands.' },
-      { title: 'Food Festival', date: '2024-12-12', location: 'Park Square', description: 'Taste amazing dishes from various cultures.' }
-  ];
 // Set up your server to listen on a port
 app.listen(3000, () => {
     console.log('App is running on http://localhost:3000');
