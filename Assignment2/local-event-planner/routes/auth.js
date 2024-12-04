@@ -1,6 +1,7 @@
 const express = require('express');
 const passport = require('passport');
 const router = express.Router();
+const GitHubStrategy = require('passport-github2').Strategy;
 
 // Registration route
 router.get('/register', (req, res) => {
@@ -27,5 +28,6 @@ router.get('/auth/github/callback', passport.authenticate('github', {
   successRedirect: '/',
   failureRedirect: '/login'
 }));
+
 
 module.exports = router;

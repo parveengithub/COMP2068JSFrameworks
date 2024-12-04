@@ -34,19 +34,6 @@ app.use(function(err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  app.get('/', (req, res) => {
-    res.render('index'); // Renders index.hbs
-  });
-  
-  app.get('/login', (req, res) => {
-    res.render('login'); // Renders login.hbs
-  });
-  
-  app.get('/register', (req, res) => {
-    res.render('register'); // Renders register.hbs
-  });
-  
-
   // render the error page
   res.status(err.status || 500);
   res.render('error');
@@ -56,5 +43,42 @@ app.listen(3000, () => {
   console.log('Server is running on port 3000');
 });
 
+const GITHUB_CLIENT_ID = 'your_client_id';
+const GITHUB_CLIENT_SECRET = 'your_client_secret';
+const CALLBACK_URL = 'http://localhost:3000/auth/github/callback';
+
+
+passport.use(new GitHubStrategy({
+  clientID: GITHUB_CLIENT_ID,
+  clientSecret: GITHUB_CLIENT_SECRET,
+  callbackURL: CALLBACK_URL
+},
+(accessToken, refreshToken, profile, done) => {
+  // Logic to find or create a user in your database
+  console.log(profile);
+  return done(null, profile);
+}
+));
+
+passport.serializeUser((user, done) => done(null, user));
+passport.deserializeUser((obj, done) => done(null, obj));
+
+const session = require('express-session');
+
+app.use(session({
+    secret: 'your_secret_key',
+    resave: false,
+    saveUninitialized: true,
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.get('/auth/github', passport.authenticate('github', { scope: ['user:email'] }));
+
+app.get('/auth/github/callback',
+  passport.authenticate('github', { failureRedirect: '/login' }),
+  (req, res) => {
+    res.redirect('/'); // Redirect to home after successful login
+  }
+);
 
 module.exports = app;
