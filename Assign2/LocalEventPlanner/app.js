@@ -13,6 +13,10 @@ const bodyParser = require('body-parser');
 
 // Use body-parser middleware to parse POST request data
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.engine('hbs', exphbs({ extname: 'hbs' }));
+app.set('view engine', 'hbs');
+
 app.post('/login', (req, res) => {
   const { email, password } = req.body;
   
@@ -52,6 +56,16 @@ app.get('/', (req, res) => {
 app.get('/events', (req, res) => {
     // You can fetch events from the database and pass them here
     res.render('events', { title: 'Events', events: [] });
+});
+
+// Render Login Page
+app.get('/login', (req, res) => {
+  res.render('login'); // Renders the login.hbs file
+});
+
+// Render Register Page
+app.get('/register', (req, res) => {
+  res.render('register'); // Renders the register.hbs file
 });
 
 // Set up your server to listen on a port
