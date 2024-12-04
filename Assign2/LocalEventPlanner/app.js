@@ -12,6 +12,28 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Home route
+app.get('/', (req, res) => {
+    res.render('index', { title: 'Home' });
+});
+
+// Events route
+app.get('/events', (req, res) => {
+    // You can fetch events from the database and pass them here
+    res.render('events', { title: 'Events', events: [] });
+});
+
+
+  const events = [
+      { title: 'Music Concert', date: '2024-12-10', location: 'City Center', description: 'A thrilling music concert with local bands.' },
+      { title: 'Food Festival', date: '2024-12-12', location: 'Park Square', description: 'Taste amazing dishes from various cultures.' }
+  ];
+// Set up your server to listen on a port
+app.listen(3000, () => {
+    console.log('App is running on http://localhost:3000');
+});
 
 app.use(logger('dev'));
 app.use(express.json());
