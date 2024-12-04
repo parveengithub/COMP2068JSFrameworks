@@ -9,6 +9,35 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+const bodyParser = require('body-parser');
+
+// Use body-parser middleware to parse POST request data
+app.use(bodyParser.urlencoded({ extended: true }));
+app.post('/login', (req, res) => {
+  const { email, password } = req.body;
+  
+  // Validate user credentials with your database (example logic)
+  // This can be done using Passport.js or manual user authentication logic
+  if (email === 'test@example.com' && password === 'password') {
+      // Redirect to the homepage after successful login
+      res.redirect('/');
+  } else {
+      // Redirect back to the login page if credentials are incorrect
+      res.redirect('/login');
+  }
+});
+
+// For handling registration (Simplified example)
+app.post('/register', (req, res) => {
+  const { email, password } = req.body;
+  
+  // Save the new user to the database
+  // (For example, using a database like MongoDB to store user credentials)
+  // Here you should hash the password before saving it
+  
+  res.redirect('/login'); // Redirect to login page after successful registration
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
