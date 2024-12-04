@@ -3,5 +3,5 @@ module.exports = {
   githubClientID: 'Ov23lihwQ54BcRrp4tJW',
   githubClientSecret: '38247395bb7b6f30dbe59c60f4cb8a5d18e68832',
   sessionSecret: 'your_session_secret',
-  guthubCallbackURL: 'http://localhost:3001/auth/github/callback'
+  guthubCallbackURL: 'http://localhost:3012/auth/github/callback'
 };
