@@ -25,22 +25,6 @@ app.get('/events', (req, res) => {
     res.render('events', { title: 'Events', events: [] });
 });
 
-// Connect to MongoDB
-mongoose.connect('mongodb://localhost/local_event_planner', { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log('MongoDB connected'))
-    .catch(err => console.log(err));
-
-// Event schema
-const eventSchema = new mongoose.Schema({
-    title: String,
-    date: String,
-    location: String,
-    description: String,
-    image: String
-});
-
-// Event model
-const Event = mongoose.model('Event', eventSchema);
 
 
   const events = [
