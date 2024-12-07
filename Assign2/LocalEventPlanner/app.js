@@ -65,11 +65,3 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
-require('./config/passport')(app);
-const authRouter = require('./routes/auth');
-app.use('/auth', authRouter);
-
-const connectDB = require('./config/db');
-connectDB();
-
