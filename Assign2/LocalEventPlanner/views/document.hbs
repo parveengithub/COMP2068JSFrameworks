@@ -1,0 +1,5 @@
+router.get('/', async (req, res) => {
+  const query = req.query.search || '';
+  const documents = await Document.find({ title: { $regex: query, $options: 'i' } });
+  res.render('documents', { documents });
+});

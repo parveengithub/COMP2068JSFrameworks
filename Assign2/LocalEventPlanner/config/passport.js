@@ -1,44 +1,42 @@
+const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const GitHubStrategy = require('passport-github').Strategy;
 const bcrypt = require('bcryptjs');
-const User = require('../models/User');
+const User = require('../models/user'); // Create user model
 
-module.exports = (passport) => {
-    passport.use(
-        new LocalStrategy({ usernameField: 'email' }, async (email, password, done) => {
-            const user = await User.findOne({ email });
-            if (!user) return done(null, false, { message: 'No user found' });
+module.exports = (app) => {
+  app.use(require('express-session')({ secret: 'secret', resave: false, saveUninitialized: false }));
+  app.use(passport.initialize());
+  app.use(passport.session());
 
-            const isMatch = await bcrypt.compare(password, user.password);
-            if (!isMatch) return done(null, false, { message: 'Password incorrect' });
+  passport.use(new LocalStrategy(async (username, password, done) => {
+    try {
+      const user = await User.findOne({ username });
+      if (!user || !bcrypt.compareSync(password, user.password)) {
+        return done(null, false, { message: 'Invalid credentials' });
+      }
+      return done(null, user);
+    } catch (err) {
+      return done(err);
+    }
+  }));
 
-            return done(null, user);
-        })
-    );
+  passport.use(new GitHubStrategy({
+    clientID: 'GITHUB_CLIENT_ID',
+    clientSecret: 'GITHUB_CLIENT_SECRET',
+    callbackURL: 'http://localhost:3000/auth/github/callback'
+  }, async (accessToken, refreshToken, profile, done) => {
+    try {
+      let user = await User.findOne({ githubId: profile.id });
+      if (!user) {
+        user = await User.create({ githubId: profile.id, username: profile.username });
+      }
+      return done(null, user);
+    } catch (err) {
+      return done(err);
+    }
+  }));
 
-    passport.use(
-        new GitHubStrategy(
-            {
-                clientID: process.env.GITHUB_CLIENT_ID,
-                clientSecret: process.env.GITHUB_CLIENT_SECRET,
-                callbackURL: '/auth/github/callback',
-            },
-            async (accessToken, refreshToken, profile, done) => {
-                const user = await User.findOne({ githubId: profile.id });
-                if (user) return done(null, user);
-
-                const newUser = new User({
-                    githubId: profile.id,
-                    email: profile._json.email || profile.username,
-                    name: profile.displayName || profile.username,
-                });
-
-                await newUser.save();
-                done(null, newUser);
-            }
-        )
-    );
-
-    passport.serializeUser((user, done) => done(null, user.id));
-    passport.deserializeUser((id, done) => User.findById(id, done));
+  passport.serializeUser((user, done) => done(null, user.id));
+  passport.deserializeUser((id, done) => User.findById(id, done));
 };
