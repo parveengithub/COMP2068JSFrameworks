@@ -1,26 +1,22 @@
-const express = require('express');
-const Event = require('../models/Event');
-const router = express.Router();
-
-// Public Event List
-router.get('/', async (req, res) => {
-    const events = await Event.find();
-    res.render('events', { events });
+router.get('/add', isAuthenticated, function(req, res, next) {
+  res.render('add-event');
+});
+router.post('/add', isAuthenticated, function(req, res, next) {
+  // Add event logic here
+});
+router.get('/edit/:id', isAuthenticated, function(req, res, next) {
+  Event.findById(req.params.id, function(err, event) {
+    if (err) return next(err);
+    res.render('edit-event', { event: event });
+  });
+});
+router.post('/edit/:id', isAuthenticated, function(req, res, next) {
+  // Edit event logic here
 });
 
-// Add Event
-router.post('/add', async (req, res) => {
-    const { title, description, location, date } = req.body;
-    const newEvent = new Event({
-        title,
-        description,
-        location,
-        date,
-        createdBy: req.user.id,
-    });
-    await newEvent.save();
-    req.flash('success_msg', 'Event added successfully');
+router.post('/delete/:id', isAuthenticated, function(req, res, next) {
+  Event.findByIdAndRemove(req.params.id, function(err) {
+    if (err) return next(err);
     res.redirect('/events');
+  });
 });
-
-module.exports = router;

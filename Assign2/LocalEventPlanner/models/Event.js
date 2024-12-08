@@ -1,12 +1,16 @@
-const mongoose = require('mongoose');
-
-const EventSchema = new mongoose.Schema({
-    title: { type: String, required: true },
-    description: { type: String, required: true },
-    location: { type: String, required: true },
-    date: { type: Date, required: true },
-    createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-    createdAt: { type: Date, default: Date.now },
-});
-
-module.exports = mongoose.model('Event', EventSchema);
+router.get('/add', isAuthenticated, function(req, res, next) {
+    res.render('add-event');
+  });
+  router.post('/add', isAuthenticated, function(req, res, next) {
+    // Add event logic here
+  });
+  router.get('/edit/:id', isAuthenticated, function(req, res, next) {
+    Event.findById(req.params.id, function(err, event) {
+      if (err) return next(err);
+      res.render('edit-event', { event: event });
+    });
+  });
+  router.post('/edit/:id', isAuthenticated, function(req, res, next) {
+    // Edit event logic here
+  });
+  
