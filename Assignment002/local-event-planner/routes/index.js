@@ -16,4 +16,18 @@ router.get('/public', async (req, res) => {
   }
 });
 
+
+
+
+// Route to render the home page with dynamic data
+router.get('/', async (req, res) => {
+  try {
+    const title = "Local Event Planner";
+    res.render('home', { title });
+  } catch (error) {
+    console.error("Error loading home page", error);
+    res.status(500).send('An error occurred');
+  }
+});
+
 module.exports = router;
