@@ -27,12 +27,6 @@ router.post('/delete/:id', async (req, res) => {
     res.redirect('/events');
 });
 
-
-
-
-
-
-
 const express = require('express');
 const Router = express.Router();
 const Event = require('../models/event'); // Create this Event model
@@ -91,6 +85,34 @@ router.get('/edit/:id', ensureAuthenticated, async (req, res) => {
       res.status(500).send('Error deleting event.');
     }
   });
+
+
+
+
+
+
+
+
+
+  
+// Serve the Add Event Page
+router.get('/add-event', (req, res) => {
+  res.render('add-event'); // Render the view for the Add Event Page
+});
+
+// Handle the form submission
+router.post('/add', (req, res) => {
+  const { title, date, location } = req.body; // Extract data from the form submission
+
+  // Here you can implement logic to save data to the database
+  console.log('Event Data Received:', { title, date, location });
+
+  // Redirect back to the homepage or another relevant page after successful submission
+  res.redirect('/');
+});
+
+
+
 
 module.exports = router;
 
