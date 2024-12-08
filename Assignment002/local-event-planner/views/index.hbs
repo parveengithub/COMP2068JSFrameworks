@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+    <!-- Header Section -->
     <header>
         <h1>Welcome to Local Event Planner</h1>
         <nav>
@@ -13,12 +14,44 @@
             <a href="/contact">Contact Us</a>
         </nav>
     </header>
+
+    <!-- Main Content Section -->
     <main>
         <section>
             <h2>Discover Events Around You!</h2>
             <p>Search, plan, and register for exciting events near you.</p>
         </section>
+
+        <!-- Event Creation Form Section -->
+        <section>
+            <h2>Create Your Own Event</h2>
+            <form action="/events/create" method="POST">
+                <label for="name">Event Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="date">Event Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+
+                <label for="category">Category:</label>
+                <select id="category" name="category">
+                    <option value="Sports">Sports</option>
+                    <option value="Music">Music</option>
+                    <option value="Art">Art</option>
+                    <option value="Food">Food</option>
+                </select>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description"></textarea>
+
+                <button type="submit">Create Event</button>
+            </form>
+        </section>
     </main>
+
+    <!-- Footer Section -->
     <footer>
         <p>&copy; 2024 Local Event Planner</p>
     </footer>
