@@ -6,7 +6,7 @@ module.exports = async (req, res) => {
         const event = await Event.findById(eventId).exec();
 
         if (event) {
-            res.render('editEvent', { userId: req.session.userId, event: event });
+            res.render('editevent', { userId: req.session.userId, event: event });
         } else {
             res.status(404).send('Event not found');
         }
