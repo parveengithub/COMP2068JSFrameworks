@@ -1,11 +1,20 @@
-<form action="/events/add" method="post">
+<h1>Edit Event</h1>
+<form action="/edit-event/{{event._id}}" method="post">
   <div>
-    <label for="name">Event Name:</label>
-    <input type="text" id="name" name="name">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" value="{{event.title}}" required>
   </div>
   <div>
     <label for="date">Date:</label>
-    <input type="text" id="date" name="date">
+    <input type="date" id="date" name="date" value="{{event.date}}" required>
   </div>
-  <button type="submit">Add Event</button>
+  <div>
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location" value="{{event.location}}" required>
+  </div>
+  <div>
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" required>{{event.description}}</textarea>
+  </div>
+  <button type="submit">Edit Event</button>
 </form>

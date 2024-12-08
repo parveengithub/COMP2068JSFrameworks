@@ -1,3 +1,10 @@
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Local Event Planner' });
+const Event = require('./models/event');
+
+router.get('/events', async (req, res, next) => {
+  try {
+    const events = await Event.find();
+    res.render('events', { events });
+  } catch (err) {
+    next(err);
+  }
 });

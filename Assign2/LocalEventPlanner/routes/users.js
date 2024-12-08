@@ -1,13 +1,7 @@
-router.get('/register', function(req, res, next) {
-  res.render('register');
-});
-router.post('/register', function(req, res, next) {
-  // Registration logic here
-});
+router.get('/auth/github', passport.authenticate('github'));
 
-router.get('/login', function(req, res, next) {
-  res.render('login');
-});
-router.post('/login', function(req, res, next) {
-  // Login logic here
-});
+router.get('/auth/github/callback', 
+  passport.authenticate('github', { failureRedirect: '/login' }),
+  (req, res) => {
+    res.redirect('/');
+  });
