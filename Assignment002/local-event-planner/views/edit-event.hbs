@@ -1,0 +1,17 @@
+<h1>Edit Event</h1>
+<form action="/events/edit/{{event._id}}" method="POST" enctype="multipart/form-data">
+    <input type="text" name="title" value="{{event.title}}" required>
+    <textarea name="description">{{event.description}}</textarea>
+    <input type="date" name="date" value="{{event.date}}" required>
+    <input type="text" name="location" value="{{event.location}}" required>
+    <p>Current Attachment: 
+        {{#if event.filePath}}
+            <a href="{{event.filePath}}" download>Download</a>
+        {{else}}
+            None
+        {{/if}}
+    </p>
+    <input type="file" name="attachment">
+    <button type="submit">Update Event</button>
+</form>
+<a href="/public">Cancel</a>
