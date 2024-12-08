@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{> head }}>
+
+    <body class="d-flex flex-column">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            {{> navigation }}
+            
+            <!-- Page content-->
+            <section class="py-5">
+                <div class="container px-5">
+                    <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+                        <div class="row gx-5 justify-content-center">
+                            <div class="col-lg-8 col-xl-6">
+                                <div class="text-center mb-5">
+                                    <h1 class="fw-bolder">Edit Event</h1>
+                                </div>
+                                <form action="/updateEvent/{{event._id}}" method="POST">
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="name" name="name" type="text" value="{{event.name}}" required />
+                                        <label for="name">Event Name</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="date" name="date" type="date" value="{{event.date}}" required />
+                                        <label for="date">Date</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="time" name="time" type="time" value="{{event.time}}" required />
+                                        <label for="time">Time</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="details" name="details" type="text" value="{{event.details}}" required />
+                                        <label for="details">Details</label>
+                                    </div>
+                                    <div class="d-grid">
+                                        <button class="btn btn-primary btn-lg" type="submit">Update</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        {{> footer }}
+
+        <!-- Bootstrap core JS-->
+        <!-- Core theme JS-->
+        {{> script }}
+    </body>
+</html>

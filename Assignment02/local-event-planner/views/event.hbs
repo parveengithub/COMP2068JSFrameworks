@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head }} 
+
+<body class="d-flex flex-column">
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        {{> navigation }} 
+        
+        <!-- Page content-->
+        <section class="py-5">
+            <div class="container px-5">
+                <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-8 col-xl-6">
+                            {{#if userId}}
+                                <form id="appointmentForm" action="/addEvent" method="POST">
+                                    <div class="text-center mb-5">
+                                        <h1 class="fw-bolder">Add Event</h1>
+                                    </div>
+                                    <div class="text-center mb-5">
+                                        {{#if errors}}
+                                            {{#each errors}}
+                                                <h3>{{this}}</h3>
+                                            {{/each}}
+                                        {{/if}}
+                                    </div>
+                                    <div class="text-center mb-5">
+                                        {{#if message}}
+                                            <h3>{{message}}</h3>
+                                        {{/if}}
+                                    </div>
+                                    <!-- Event Name input-->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="name" name="name" type="text" placeholder="Event Name" required />
+                                        <label for="name">Event Name</label>
+                                    </div>
+                                    <!-- Address input-->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="address" name="address" type="text" placeholder="Address" required />
+                                        <label for="address">Address</label>
+                                    </div>
+                                    <!-- Date input-->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="date" name="date" type="date" required />
+                                        <label for="date">Date</label>
+                                    </div>
+
+                                   
+                                    <!-- Time input-->
+                                    <div class="form-floating mb-3">
+                                        <select id="time" class="dropdown-toggle form-control" name="time" required>
+                                            <option value="08:00 AM">08:00 AM</option>
+                                            <option value="08:30 AM">08:30 AM</option>
+                                            <option value="09:00 AM">09:00 AM</option>
+                                            <option value="09:30 AM">09:30 AM</option>
+                                            <option value="10:00 AM">10:00 AM</option>
+                                            <option value="10:30 AM">10:30 AM</option>
+                                            <option value="11:00 AM">11:00 AM</option>
+                                            <option value="11:30 AM">11:30 AM</option>
+                                            <option value="12:00 PM">12:00 PM</option>
+                                            <option value="12:30 PM">12:30 PM</option>
+                                            <option value="01:00 PM">01:00 PM</option>
+                                            <option value="01:30 PM">01:30 PM</option>
+                                            <option value="02:00 PM">02:00 PM</option>
+                                        </select>
+                                        <label for="time">Time</label>
+                                    </div>
+
+                                     <div class="form-floating mb-3">
+                                        <input class="form-control" id="details" name="details" placeholder="Event Details" type="text" required />
+                                        <label for="details">Details</label>
+                                    </div>
+                                    <!-- Submit button -->
+                                    <div class="d-grid"><button class="btn btn-primary btn-lg" id="addAppointmentButton" type="submit">Add</button></div>
+                                </form>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {{> footer }}
+
+    <!-- Bootstrap core JS-->
+    <!-- Core theme JS-->
+    {{> script }}
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{> head }} 
+<body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+         {{> navigation }} 
+        <!-- Header-->
+        <header class="bg-dark py-5">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-center">
+                    <div class="my-5 text-center text-xl-start">
+                        <h1 class="display-5 fw-bolder text-white mb-2 text-center">Local Event Planner</h1>
+                        <p class="lead fw-normal text-white-50 mb-4 text-center">Check Nearby Events</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Testimonial section-->
+        <div class="py-5 bg-light">
+            <div class="container px-5 my-5">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-10 col-xl-7">
+                        <div class="text-center">
+                            <div class="fs-4 mb-4 fw-bold">You can check the nearest events here...</div>
+                            <div class="fs-6 mb-6 fst-italic">Posted By Local Event Planner</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Events Grid -->
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    {{#each events}}
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">{{name}}</h5>
+                                <p class="card-text"><strong>Date:</strong> {{date}}<br><strong>Time:</strong> {{time}}<br><strong>Details:</strong> {{details}}</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                <!-- Events Grid End -->
+            </div>
+        </div>
+    </main>
+    <!-- Footer-->
+    {{> footer }} 
+    <!-- Bootstrap core JS-->
+    <!-- Core theme JS-->
+    {{> script }}
+</body>
+</html>
