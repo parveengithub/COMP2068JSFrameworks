@@ -1,0 +1,12 @@
+<h1>Events</h1>
+<ul>
+    {{#each events}}
+    <li>
+        <h2>{{this.name}}</h2>
+        <p>{{this.description}}</p>
+        <form action="/events/delete/{{this._id}}" method="POST">
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+    {{/each}}
+</ul>
