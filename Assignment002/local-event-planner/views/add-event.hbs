@@ -1,41 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Add Event - Local Event Planner</title>
-  <link rel="stylesheet" href="/stylesheets/style.css" />
-</head>
-<body>
-  <!-- Header Section -->
-  <header>
-    <h1>Local Event Planner</h1>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/public">Find Events</a></li>
-        <li><a href="/about">About Us</a></li>
-        <li><a href="/contact-us">Contact Us</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Main Content -->
-  <main>
+{{#> layout title="Add Event"}}
     <section class="content-container">
-      <h2>Add Event</h2>
-      <form action="/events/add" method="POST">
-        <input type="text" name="title" placeholder="Event Title" required>
-        <input type="date" name="date" required>
-        <input type="text" name="location" placeholder="Event Location" required>
-        <button type="submit">Add Event</button>
-      </form>
+        <h2>Add Event</h2>
+        <form action="/events/add" method="POST">
+            <input type="text" name="title" placeholder="Event Title" required>
+            <input type="date" name="date" required>
+            <input type="text" name="location" placeholder="Event Location" required>
+            <button type="submit">Add Event</button>
+        </form>
     </section>
-  </main>
-
-  <!-- Footer Section -->
-  <footer>
-    <p>&copy; 2024 Local Event Planner. All Rights Reserved.</p>
-  </footer>
-</body>
-</html>
+{{/layout}}
