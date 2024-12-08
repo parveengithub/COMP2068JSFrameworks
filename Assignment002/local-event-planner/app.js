@@ -3,13 +3,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
-
-
-
-
-
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -57,6 +50,27 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 
 
     
+    app.get('/find-events', (req, res) => {
+      res.render('find-events');
+    });
+    
+    // About Page
+    app.get('/about', (req, res) => {
+      res.render('about');
+    });
+    
+    // Contact Us Page
+    app.get('/contact-us', (req, res) => {
+      res.render('contact');
+    });
+    
+    // Server setup
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => console.log(`Server started on http://localhost:${PORT}`));
 
+
+
+
+    
     
 module.exports = app;
