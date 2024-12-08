@@ -10,7 +10,7 @@ const expressSession = require('express-session');
 const flash = require('connect-flash');
 require('dotenv').config();
 
-app.set('view engine', 'hbs'); // Set view engine to Handlebars
+app.set('view engine', 'hbs'); 
 app.set('views', path.join(__dirname, 'views')); // Set views directory
 hbs.registerPartials(path.join(__dirname, 'views/partials')); // Register partials
 
