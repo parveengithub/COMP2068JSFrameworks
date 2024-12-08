@@ -1,0 +1,1 @@
+Application Home page will list the details of all the events.
