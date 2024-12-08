@@ -64,12 +64,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
       res.render('contact');
     });
     
-    // Server setup
-    const PORT = process.env.PORT || 3000;
-    app.listen(PORT, () => console.log(`Server started on http://localhost:${PORT}`));
-
-
-
+    
 
     
     
