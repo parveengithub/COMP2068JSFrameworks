@@ -6,10 +6,6 @@ var logger = require('morgan');
 
 
 
-require('dotenv').config();
-const connectDB = require('./config/db');
-connectDB();
-
 
 
 
