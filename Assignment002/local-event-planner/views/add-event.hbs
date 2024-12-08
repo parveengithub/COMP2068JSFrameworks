@@ -17,6 +17,7 @@
 
     <!-- Main Content Section -->
     <main>
+        <!-- Add Event Form -->
         <section class="content-container">
             <h2>Add New Event</h2>
             <form action="/events/add" method="POST">
@@ -28,27 +29,43 @@
             </form>
         </section>
 
+        <!-- Display Events -->
         <section class="content-container">
             <h2>List of Events</h2>
-            {{#if events.length}}
-                <ul>
-                    {{#each events}}
-                        <li>
-                            <strong>Title:</strong> {{this.title}}<br>
-                            <strong>Date:</strong> {{this.date}}<br>
-                            <strong>Location:</strong> {{this.location}}<br>
-                            <strong>Description:</strong> {{this.description}}<br>
-                            <form action="/events/delete/{{this._id}}" method="POST" style="display:inline;">
-                                <button type="submit">Delete</button>
-                            </form>
-                            <a href="/events/edit/{{this._id}}">Edit</a>
-                        </li>
-                        <hr>
-                    {{/each}}
-                </ul>
-            {{else}}
-                <p>No events have been added yet.</p>
-            {{/if}}
+            <ul>
+                <li>
+                    <strong>Title:</strong> Annual Charity Golf Tournament<br>
+                    <strong>Date:</strong> 2024-03-15<br>
+                    <strong>Location:</strong> Riverside Golf Club<br>
+                    <strong>Description:</strong> A charity event supporting local education initiatives.
+                    <form action="/events/delete/1" method="POST" style="display:inline;">
+                        <button type="submit">Delete</button>
+                    </form>
+                    <a href="/events/edit/1">Edit</a>
+                </li>
+                <hr>
+                <li>
+                    <strong>Title:</strong> Music Fest 2024<br>
+                    <strong>Date:</strong> 2024-05-20<br>
+                    <strong>Location:</strong> Downtown City Park<br>
+                    <strong>Description:</strong> A lively celebration with local and international artists performing live.
+                    <form action="/events/delete/2" method="POST" style="display:inline;">
+                        <button type="submit">Delete</button>
+                    </form>
+                    <a href="/events/edit/2">Edit</a>
+                </li>
+                <hr>
+                <li>
+                    <strong>Title:</strong> Food & Wine Expo 2024<br>
+                    <strong>Date:</strong> 2024-07-18<br>
+                    <strong>Location:</strong> City Convention Center<br>
+                    <strong>Description:</strong> Explore local culinary delights and exquisite wines from renowned chefs and sommeliers.
+                    <form action="/events/delete/3" method="POST" style="display:inline;">
+                        <button type="submit">Delete</button>
+                    </form>
+                    <a href="/events/edit/3">Edit</a>
+                </li>
+            </ul>
         </section>
     </main>
 
