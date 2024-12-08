@@ -37,6 +37,9 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
+
 const mongoose = require('mongoose');
 require('dotenv').config();
 
@@ -44,27 +47,10 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.error(err));
 
-    const session = require('express-session');
-    const flash = require('connect-flash');
-    const passport = require('passport');
-    require('./config/passport')(passport);
+
+
+
     
-    app.use(session({
-      secret: 'yourSecretKey',
-      resave: false,
-      saveUninitialized: false
-    }));
-    app.use(passport.initialize());
-    app.use(passport.session());
-    app.use(flash());
+
     
-    app.use((req, res, next) => {
-      res.locals.success_msg = req.flash('success_msg');
-      res.locals.error_msg = req.flash('error_msg');
-      res.locals.error = req.flash('error');
-      res.locals.user = req.user || null;
-      next();
-    });
-    
-   
 module.exports = app;
