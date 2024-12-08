@@ -7,9 +7,9 @@
 <body>
     <!-- Header Section -->
     <header>
-        <h1>Welcome to Local Event Planner</h1>
+        <h1>Local Event Planner</h1>
         <nav>
-            <a href="/add-event">Add Event</a>
+            <a href="index.html">Home</a>
             <a href="/about">About</a>
             <a href="/contact">Contact Us</a>
         </nav>
@@ -17,55 +17,14 @@
 
     <!-- Main Content Section -->
     <main>
-        <!-- Add Event Form -->
         <section class="content-container">
-            <h2>Add New Event</h2>
+            <h2>Add Event</h2>
             <form action="/events/add" method="POST">
                 <input type="text" name="title" placeholder="Event Title" required>
                 <input type="date" name="date" required>
                 <input type="text" name="location" placeholder="Event Location" required>
-                <textarea name="description" placeholder="Event Description" required></textarea>
                 <button type="submit">Add Event</button>
             </form>
-        </section>
-
-        <!-- Display Events -->
-        <section class="content-container">
-            <h2>List of Events</h2>
-            <ul>
-                <li>
-                    <strong>Title:</strong> Annual Charity Golf Tournament<br>
-                    <strong>Date:</strong> 2024-03-15<br>
-                    <strong>Location:</strong> Riverside Golf Club<br>
-                    <strong>Description:</strong> A charity event supporting local education initiatives.
-                    <form action="/events/delete/1" method="POST" style="display:inline;">
-                        <button type="submit">Delete</button>
-                    </form>
-                    <a href="/events/edit/1">Edit</a>
-                </li>
-                <hr>
-                <li>
-                    <strong>Title:</strong> Music Fest 2024<br>
-                    <strong>Date:</strong> 2024-05-20<br>
-                    <strong>Location:</strong> Downtown City Park<br>
-                    <strong>Description:</strong> A lively celebration with local and international artists performing live.
-                    <form action="/events/delete/2" method="POST" style="display:inline;">
-                        <button type="submit">Delete</button>
-                    </form>
-                    <a href="/events/edit/2">Edit</a>
-                </li>
-                <hr>
-                <li>
-                    <strong>Title:</strong> Food & Wine Expo 2024<br>
-                    <strong>Date:</strong> 2024-07-18<br>
-                    <strong>Location:</strong> City Convention Center<br>
-                    <strong>Description:</strong> Explore local culinary delights and exquisite wines from renowned chefs and sommeliers.
-                    <form action="/events/delete/3" method="POST" style="display:inline;">
-                        <button type="submit">Delete</button>
-                    </form>
-                    <a href="/events/edit/3">Edit</a>
-                </li>
-            </ul>
         </section>
     </main>
 
