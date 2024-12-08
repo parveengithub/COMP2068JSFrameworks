@@ -1,11 +1,25 @@
-{{#> layout title="Add Event"}}
-    <section class="content-container">
-        <h2>Add Event</h2>
-        <form action="/events/add" method="POST">
-            <input type="text" name="title" placeholder="Event Title" required>
-            <input type="date" name="date" required>
-            <input type="text" name="location" placeholder="Event Location" required>
-            <button type="submit">Add Event</button>
-        </form>
-    </section>
-{{/layout}}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <main>
+     <!-- Add Event Section -->
+        <section class="content-container">
+            <h2>Add Event</h2>
+            <form action="/events/add" method="POST">
+                <input type="text" name="title" placeholder="Event Title" required>
+                <input type="date" name="date" required>
+                <input type="text" name="location" placeholder="Event Location" required>
+                <button type="submit">Add Event</button>
+            </form>
+        </section>
+  </main>
+   <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Local Event Planner</p>
+    </footer>
+</body>
+</html>
