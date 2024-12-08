@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head }} 
+
+<body class="d-flex flex-column">
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        {{> navigation }} 
+
+        <!-- Page content-->
+        <section class="py-5">
+            <div class="container px-5">
+                <!-- Contact form-->
+                <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+                    <div class="row gx-5 justify-content-center grid-container">
+                        <div>
+                            <form id="signUpForm" data-sb-form-api-token="API_TOKEN" method="POST" action="signup">
+                                <div class="form-floating mb-3">
+                                    <h3 class="fw-bolder">Sign Up</h3>
+                                    {{!-- <% if (typeof signUpMessage=='string' && signUpMessage) { %>
+                                        <h4 class="fw-bolder">
+                                            <%= signUpMessage %>
+                                        </h4>
+                                    <% } %> --}}
+                                </div>
+                                <!-- User Name input-->
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="username" type="text" name="username" placeholder="Enter your username..." data-sb-validations="required" required />
+                                    <label for="username">Username</label>
+                                    <div class="invalid-feedback" data-sb-feedback="username:required">Username is required.</div>
+                                </div>
+                                <!-- Password input-->
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="password" type="password" name="password" placeholder="Enter your password..." data-sb-validations="required,password" required />
+                                    <label for="password">Password</label>
+                                    <div class="invalid-feedback" data-sb-feedback="password:required">Password is required.</div>
+                                </div>
+                                <!-- Confirm Password input-->
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="confirmpassword" type="password" name="confirmpassword" placeholder="Enter your password..." data-sb-validations="required,password" required />
+                                    <label for="confirmpassword">Confirm Password</label>
+                                    <div class="invalid-feedback" data-sb-feedback="password:required">Password is required.</div>
+                                </div>
+                                
+                                <!-- Buttons-->
+                                <div class="d-grid">
+                                    <button class="btn btn-primary btn-lg" id="signupButton" type="submit">Signup</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class>
+                            <div class="form-floating mb-3">
+                                <h3 class="fw-bolder">Login</h3>
+                                {{!-- <% if (typeof message=='string' && message) { %>
+                                    <h4 class="fw-bolder">
+                                        <%= message %>
+                                    </h4>
+                                <% } %> --}}
+                            </div>
+                            <form id="loginForm" data-sb-form-api-token="API_TOKEN" method="POST" action="/postLogin">
+                                <!-- User Name input-->
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="username" type="text" name="username" placeholder="Enter your username..." data-sb-validations="required" required />
+                                    <label for="username">User Name</label>
+                                    <div class="invalid-feedback" data-sb-feedback="username:required">Username is required.</div>
+                                </div>
+                                <!-- Password input-->
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="password" type="password" name="password" placeholder="Enter your password..." data-sb-validations="required,password" required />
+                                    <label for="password">Password</label>
+                                    <div class="invalid-feedback" data-sb-feedback="password:required">Password is required.</div>
+                                </div>
+                                <!-- Buttons-->
+                                <div class="d-grid">
+                                    <button class="btn btn-primary btn-lg" id="loginButton" type="submit" style="margin-bottom: 20px;">Login</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer-->
+    {{> footer }} 
+
+    <!-- Bootstrap core JS-->
+    <!-- Core theme JS-->
+ {{> script }} 
+</body>
+</html>
