@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{title}}</title>
+    <title>Add Event - Local Event Planner</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <!-- Header Section -->
     <header>
-        <h1>Welcome to Local Event Planner</h1>
+        <h1>Local Event Planner</h1>
         <nav>
-            <a href="add-event.hbs">Add Event</a>
+            <a href="index.html">Home</a>
             <a href="/about">About</a>
             <a href="/contact">Contact Us</a>
         </nav>
@@ -17,9 +17,6 @@
 
     <!-- Main Content Section -->
     <main>
-       
-
-        <!-- Add Event Section -->
         <section class="content-container">
             <h2>Add Event</h2>
             <form action="/events/add" method="POST">
@@ -28,55 +25,6 @@
                 <input type="text" name="location" placeholder="Event Location" required>
                 <button type="submit">Add Event</button>
             </form>
-        </section>
-
-        <!-- Event Creation Section -->
-        <section>
-            <h2>Create Your Own Event</h2>
-            <form action="/events/create" method="POST">
-                <label for="name">Event Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="date">Event Date:</label>
-                <input type="date" id="date" name="date" required>
-
-                <label for="location">Location:</label>
-                <input type="text" id="location" name="location" required>
-
-                <label for="category">Category:</label>
-                <select id="category" name="category">
-                    <option value="Sports">Sports</option>
-                    <option value="Music">Music</option>
-                    <option value="Art">Art</option>
-                    <option value="Food">Food</option>
-                </select>
-
-                <label for="description">Description:</label>
-                <textarea id="description" name="description"></textarea>
-
-                <button type="submit">Create Event</button>
-            </form>
-        </section>
-
-        <!-- Edit Event Section -->
-        <section class="content-container">
-            <h1>Edit Event</h1>
-            <form action="/events/edit/{{event._id}}" method="POST" enctype="multipart/form-data">
-                <input type="text" name="title" value="{{event.title}}" required>
-                <textarea name="description">{{event.description}}</textarea>
-                <input type="date" name="date" value="{{event.date}}" required>
-                <input type="text" name="location" value="{{event.location}}" required>
-                <p>Current Attachment: 
-                    {{#if event.filePath}}
-                        <a href="{{event.filePath}}" download>Download</a>
-                    {{else}}
-                        None
-                    {{/if}}
-                </p>
-                <input type="file" name="attachment">
-                <button type="submit">Update Event</button>
-            </form>
-            <a href="/public">Cancel</a>
         </section>
     </main>
 
