@@ -25,7 +25,12 @@ app.use(expressSession({
 }));
 app.use(flash());
 
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
+//mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
+mongoose.connect('mongodb+srv://assignmentmovieapp:Assignment12@cluster0.lstdh.mongodb.net/local_event_planner?retryWrites=true&w=majority', { 
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
+
 
 const homeController = require('./controllers/home');
 const loginController = require('./controllers/login');
